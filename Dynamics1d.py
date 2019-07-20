@@ -46,9 +46,17 @@ x_lim = x_max*1.1
 
 # Set up the plot
 fig, ax = plt.subplots(2,1)
+# Simulated particle plot
 ax[0].set_ylim(-y_max*0.1,y_lim)
+ax[0].set_ylabel("Height (m)")
+
+# height vs time plot
 ax[1].set_ylim(-y_max*0.1,y_lim)
 ax[1].set_xlim(0,x_lim)
+ax[1].set_xlabel("Time (s)")
+ax[1].set_ylabel("Height (m)")
+
+
 
 
 # plot the first point in the simulated y axis
@@ -86,7 +94,7 @@ for t in np.arange(0,60,0.01):
         # exit the loop if the particle hits the ground at 0
         points.set_data(x0, 0)
         break
-    plt.pause(0.00001)
+    plt.pause(0.001)
 
 plt.draw()
 
